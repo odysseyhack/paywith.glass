@@ -8,7 +8,7 @@ The paywith.glass team objectives for the Odyssey 2019 Hackathon are:
 Section 1: The REST API
 -----------------------
 
-paywith.glass uses a simple http REST API whereby calls to the go the following address on port 443 (https):
+paywith.glass uses a simple http REST API whereby calls to go the following address on port 443 (https):
   https://txn.paywith.glass
   
 All calls are prefixed with the following php POST/GET parameters:
