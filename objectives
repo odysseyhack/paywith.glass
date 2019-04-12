@@ -1,7 +1,8 @@
 The paywith.glass team objectives for the Odyssey 2019 Hackathon are:
 1. The definition of the first Public REST API rules for the paywith.glass platform (v0.1)
 2. The release of the initial documentation for this API
-3. An example of the API in use via a demonstration of how a mobile application can make use of this API to communicate with the platform.
+3. An example of the API in use via a demonstration of how a mobile application can make use of this API to communicate
+with the platform.
 
 ================================================================================================================================
 
@@ -23,8 +24,11 @@ All calls must include identification of:
     2. The country code of the vendor under which the account falls "$VENDOR_COUNTRY_ID" (default is uk-uk,+00/amsterdam-nl,+02)
     3. The user account that is accessing the service under that vendor identified by PHP Session ID "$USER_ID_HASH".
 
-User identification will be achieved via our looking.glass authentication infrastructure which defines these rules in way that has already been standardized across our entire ecosystem. looking.glass authentication relies on the user's php session id and a failure to present recognizable inputs for any of the above will result in a 301 redirection to https://paywith.glass and exit.
+User identification will be achieved via our looking.glass authentication infrastructure which defines these rules in way that
+has already been standardized across our entire ecosystem. looking.glass authentication relies on the user's php session id and
+a failure to present recognizable inputs for any of the above will result in a 301 redirection to https://paywith.glass and exit.
 
-If a user connects to the service with session ID that is recognized as being owned by a guest user, the default action is the return the looking.glass login form.
+If a user connects to the service with session ID that is recognized as being owned by a guest user, the default action is
+the return the looking.glass login form.
 
 
