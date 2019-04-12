@@ -1,7 +1,24 @@
-Public api calls go the following https address on port 443, where they are prefixed as:
-  https://txn.paywith.glass/?v=$VENDOR_DOMAIN_NAME&cc=$VENDOR_COUNTRY_ID&o=$USER_ID_HASH
+The paywith.glass team objectives for the Odyssey 2019 Hackathon are:
+1. The definition of the first Public REST API rules for the paywith.glass platform (v0.1)
+2. The release of the initial documentation for this API
+3. An example of the API in use via a demonstration of how a mobile application can make use of this API to communicate with the platform.
 
-All API calls must include identification of:
+================================================================================================================================
+
+Section 1: The REST API
+-----------------------
+
+paywith.glass uses a simple http REST API whereby calls to the go the following address on port 443 (https):
+  https://txn.paywith.glass
+  
+All calls are prefixed with the following php POST/GET parameters:
+  v=$VENDOR_DOMAIN_NAME
+  cc=$VENDOR_COUNTRY_ID
+  o=$USER_ID_HASH
+  
+  eg - https://txn.paywith.glass/?v=$VENDOR_DOMAIN_NAME&cc=$VENDOR_COUNTRY_ID&o=$USER_ID_HASH
+
+All calls must include identification of:
     1. The vendor via a unique domain name "$VENDOR_DOMAIN_NAME" (default is paywith.glass/smdwireless.com)
     2. The country code of the vendor under which the account falls "$VENDOR_COUNTRY_ID" (default is uk-uk,+00/amsterdam-nl,+02)
     3. The user account that is accessing the service under that vendor identified by PHP Session ID "$USER_ID_HASH".
