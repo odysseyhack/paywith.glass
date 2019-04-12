@@ -25,10 +25,43 @@ All calls must include identification of:
     3. The user account that is accessing the service under that vendor identified by PHP Session ID "$USER_ID_HASH".
 
 User identification will be achieved via our looking.glass authentication infrastructure which defines these rules in way that
-has already been standardized across our entire ecosystem. looking.glass authentication relies on the user's php session id and
-a failure to present recognizable inputs for any of the above will result in a 301 redirection to https://paywith.glass and exit.
+has already been standardized across our entire ecosystem.
 
-If a user connects to the service with session ID that is recognized as being owned by a guest user, the default action is
-the return the looking.glass login form.
+looking.glass authentication relies on the user's php session id. If a user connects to the service with session ID that is recognized as being owned by a guest user, the default action returns the looking.glass login form.
+
+Failure to present recognizable inputs for any of the prefix parameters result in a 301 redirection to https://paywith.glass.
+
+
+
+
+
+LIST of accepted $VENDOR_COUNTRY_ID codes by country:
+Country name                    Vendor Country ID
+
+Antigua & Barbuda               antigua-ag,-04
+Australia                       sidney-au,+10
+Barbados                        barbados-bb,-04
+Belgium                         brussels-be,+02
+Belize                          belize-bz,-06
+Canada                          toronto-ca,-04
+Dominica                        dominica-dm,-04
+France                          paris-fr,+01
+Germany                         berlin-de,+02
+Ghana                           accra-gh,+00
+Grenada                         grenada-gd,-04
+Guyana                          guyana-gy,-04
+Ireland                         ireland-ie,+00
+Jamaica                         jamaica-jm,-05
+New Zealand                     auckland-nz,+12
+Nigeria                         lagos-ng,+01
+South Africa                    johannesburg-za,+02
+Spain                           madrid-es,+02
+St. Vincent & the Grenadines    stvincent-vc,-04
+St. Lucia                       stlucia-lc,-04
+St. Kitts & Nevis               stkitts-kn,-04
+Taiwan                          taipei-tw,+08
+The Netherlands                 amsterdam-nl,+02
+Trinidad & Tobago               trinidad-tt,-04
+United Kingdom                  uk-uk,+00
 
 
