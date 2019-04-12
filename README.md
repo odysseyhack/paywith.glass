@@ -1,11 +1,11 @@
-# paywith.glass - Payments Infrastructure as a Service [PIaaS]
+# paywith.glass - Payments Infrastructure as a Service
 
 Odyssey 2019 - Inclusive Banking
 
-New:
+What's our entry
 
-paywith.glass public API
+Introducing the paywith.glass public REST API including
 
-paywith.glass API Documentation with examples
+1. paywith.glass API Documentation with examples
 
-paywith.glass example mobile application interaction via new API
+2. paywith.glass example mobile application interaction via new API calls
