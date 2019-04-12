@@ -11,5 +11,11 @@ pipeline {
                 sh ""
             }
         }
+
+	stage('NodeJS test') { 
+		steps {
+			sh ""
+		}
+	}
     }
-}a
+}
