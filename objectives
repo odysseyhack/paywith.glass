@@ -1,4 +1,4 @@
-Note: Public api calls go the following https address on port 443, where they are prefixed as:
+Public api calls go the following https address on port 443, where they are prefixed as:
   https://txn.paywith.glass/?v=$VENDOR_DOMAIN_NAME&cc=$VENDOR_COUNTRY_ID&o=$USER_ID_HASH
 
 All API calls must include identification of:
