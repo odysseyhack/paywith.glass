@@ -9,6 +9,8 @@ with the platform.
 Section 1: The REST API
 -----------------------
 
+DESCRIPTION
+-----------
 paywith.glass uses a simple http REST API whereby calls to go the following address on port 443 (https):
   https://txn.paywith.glass
   
@@ -64,4 +66,26 @@ The Netherlands                 amsterdam-nl,+02
 Trinidad & Tobago               trinidad-tt,-04
 United Kingdom                  uk-uk,+00
 
+
+ENDPOINT CODE BASE
+------------------
+
+<?php
+
+if ( (isset($_REQUEST['v'])) && (isset($_REQUEST['cc'])) && (isset($_REQUEST['o'])) ) {
+
+        $VENDOR_DOMAIN_NAME = $_REQUEST['v'];
+        $VENDOR_COUNTRY_ID = $_REQUEST['cc'];
+        $USER_ID_HASH = $_REQUEST['o'];
+
+
+
+        die();
+        }
+
+else {
+        header("Location: https://paywith.glass");
+        }
+
+?>
 
