@@ -1,0 +1,4 @@
+1. define list of endpoints and supported operations
+2. Implement call / business logic of rest service to core system
+3. look into swagger php docs?
+4. start with vendordomainname, vendorcountryid and useridhash as Q params but if theres time look into moving those as header parameters to get a cleaner API.
