@@ -26,7 +26,7 @@ class RegistrationRequest
     {
         $instance = new self();
         $instance->acceptedTos = $acceptedTos;
-        $instance->userName = $userName;
+        $instance->username = $userName;
         $instance->email = $email;
         $instance->allowOtherUsersToEmailMe = $allowOtherUsersToEmailMe;
         $instance->passwordHash = $passwordHash;
