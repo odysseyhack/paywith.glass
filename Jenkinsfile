@@ -7,9 +7,9 @@ pipeline {
 		}
 	}
 
-	stage('PHP test') {
+	stage('PHP deploy') {
             steps {
-                sh ""
+                sh "cp -r rest-api/* /home/paywithglass/public_html/rest-api"
             }
         }
 
