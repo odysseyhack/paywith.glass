@@ -7,11 +7,11 @@ require_once 'api/v1/RegistrationSubmitEndpoint.php';
 require_once 'api/v1/LoginEndpoint.php';
 require_once 'api/v1/ProfileEndpoint.php';
 require_once 'api/v1/SecuritySettingsEndpoint.php';
-require_once 'api/v1/NotificationSettingsEndpoint.php'; 
+require_once 'api/v1/endpoint/NotificationSettingsEndpoint.php'; 
 require_once 'api/v1/InitializeWalletEndpoint.php';
-require_once 'api/v1/WalletDepositOptionsEndpoint.php';
-require_once 'api/v1/WalletWithdrawOptionsEndpoint.php'; 
-require_once 'api/v1/WalletPaymentOptionsEndpoint.php';
+require_once 'api/v1/endpoint/WalletDepositOptionsEndpoint.php';
+require_once 'api/v1/endpoint/WalletWithdrawOptionsEndpoint.php'; 
+require_once 'api/v1/endpoint/WalletPaymentOptionsEndpoint.php';
 use Crada\Apidoc\Builder;
 use Crada\Apidoc\Exception;
 

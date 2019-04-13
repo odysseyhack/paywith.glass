@@ -1,13 +1,13 @@
 <?php
-require_once ('RestServiceBaseEndpoint.php');
+require_once ('endpoint/RestServiceBaseEndpoint.php');
 require_once ('model/InitializeWalletRequest.php');
 require_once ('utility/ValidationFunctions.php');
+require_once ('utility/UserValidationFunctions.php');
 
 class InitializeWalletEndpoint extends RestServiceBaseEndpoint
 {
 
     /**
-     *
      * @ApiDescription(section="Wallet", description="Initialize your wallet")
      * @ApiMethod(type="post")
      * @ApiHeaders(name="v", type="string", nullable=false, description="Vendor domain name")

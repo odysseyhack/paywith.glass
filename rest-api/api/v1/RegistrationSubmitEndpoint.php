@@ -1,7 +1,8 @@
 <?php
-require_once ('RestServiceBaseEndpoint.php');
+require_once ('endpoint/RestServiceBaseEndpoint.php');
 require_once ('model/RegistrationRequest.php');
 require_once ('utility/ValidationFunctions.php');
+require_once ('utility/UserValidationFunctions.php');
 
 class RegistrationSubmitEndpoint extends RestServiceBaseEndpoint
 {

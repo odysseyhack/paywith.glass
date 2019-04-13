@@ -1,5 +1,5 @@
 <?php
-require_once ('RestServiceBaseEndpoint.php');
+require_once ('endpoint/RestServiceBaseEndpoint.php');
 require_once ('model/ProfileRequest.php');
 
 class ProfileEndpoint extends RestServiceBaseEndpoint
