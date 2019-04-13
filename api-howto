@@ -1,0 +1,20 @@
+API howto's
+
+If you want to build a new API you can do so by creating a new class under api/v1. (ProfileEndpoint.php is a good base to start with)
+Each API class can have multiple methods (GET, POST, ...)
+the code you wish to execute in the get method should go in the method function handleGetRequest(), for the post method function handlePostRequest()
+Each endpoint that you define should extends RestServiceBaseEndpoint
+this baseclass validates the headers and delegates the request to the correct method of your endpoint.
+
+URLS
+To map a URL to a php endpoint we use the .htaccess file in /api/v1
+Add an entry there if you build a new endpoint.
+
+API documnetation
+To add an api to the documnetation document your endpoint class with the correct annotations. 
+Then open the file apidoc.php and do following steps:
+1. require_once 'path-to-your-file/file.php'
+2. add an entry in the classes array
+
+Afterwards run the file to generate the docs like this: php apidoc.php.
+This will generate the html under the defined folder.
