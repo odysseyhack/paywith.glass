@@ -11,7 +11,7 @@ Section 1: The REST API
 
 DESCRIPTION
 -----------
-paywith.glass uses a simple http REST API whereby calls to go the following address on port 443 (https):
+paywith.glass uses a simple http REST API whereby calls go to the following address on port 443 (https):
   https://txn.paywith.glass
   
 All calls are prefixed with the following php POST/GET parameters:
