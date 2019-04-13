@@ -37,10 +37,11 @@ All calls must be seeded with the following php POST/GET headers:
   eg - https://txn.paywith.glass/api/v1/register/submit
 ```
 All calls must include identification of:
+```
     1. The vendor via a unique domain name "$VENDOR_DOMAIN_NAME" (default is paywith.glass/smdwireless.com)
     2. The country code of the vendor under which the account falls "$VENDOR_COUNTRY_ID" (default is uk-uk,+00/amsterdam-nl,+02)
     3. The user account that is accessing the service under that vendor identified by PHP Session ID "$USER_ID_HASH".
-
+```
 User identification will be achieved via our looking.glass authentication infrastructure which defines these rules in way that
 has already been standardized across our entire ecosystem.
 
