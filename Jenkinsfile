@@ -9,7 +9,7 @@ pipeline {
 
 	stage('PHP deploy') {
             steps {
-                sh "sudo cp -r rest-api/* /home/paywithglass/public_html/rest-api"
+                sh "cp -r rest-api/* /home/paywithglass/public_html/rest-api"
             }
         }
 
