@@ -161,8 +161,13 @@ ENDPOINT RECEIVING INTERFACE CODE BASE
 if ( $VENDOR_DOMAIN_NAME && $VENDOR_COUNTRY_ID && $USER_ID_HASH ) {
 
         // Look up $VENDOR_DOMAIN_NAME and $VENDOR_COUNTRY_ID in db to determine the include file that should be loaded
-        // Check if the user is logged in or not. If logged in, present mobile application template from appropriate
-        // country then fetch requested data.
+        // If these are non-existent then bye-bye:
+        // header("Location: https://paywith.glass");
+        // die();
+
+        // If they check out, then proceed:
+        // Check if the user is logged in or not.
+        // If logged in, present mobile application template from appropriate country then fetch requested data.
         
         // If not logged in, fetch login-page for the matched region.
 
