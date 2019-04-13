@@ -7,7 +7,7 @@ class RegistrationRequest implements JsonSerializable
 
     var $username;
 
-    var $emailAddres;
+    var $email;
 
     var $allowOtherUsersToEmailMe;
 
@@ -22,12 +22,12 @@ class RegistrationRequest implements JsonSerializable
         return $instance;
     }
 
-    public static function createForSubmitRegistration($acceptedTos, $userName, $emailAddres, $allowOtherUsersToEmailMe, $passwordHash, $verificationUrl)
+    public static function createForSubmitRegistration($acceptedTos, $userName, $email, $allowOtherUsersToEmailMe, $passwordHash, $verificationUrl)
     {
         $instance = new self();
         $instance->acceptedTos = $acceptedTos;
         $instance->userName = $userName;
-        $instance->emailAddres = $emailAddres;
+        $instance->email = $email;
         $instance->allowOtherUsersToEmailMe = $allowOtherUsersToEmailMe;
         $instance->passwordHash = $passwordHash;
         $instance->verificationUrl = $verificationUrl;
