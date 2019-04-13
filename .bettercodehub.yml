@@ -2,6 +2,6 @@ component_depth: 4
 languages:
   - php
 exclude:
-  - /apidoc/.*
-  - /vendor/.*
-  - ./apidoc.php
+  - .*/rest-api/apidocs/.*
+  - .*/rest-api/vendor/.*
+  - /.*rest-api/apidoc.php
