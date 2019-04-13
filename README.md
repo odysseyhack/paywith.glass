@@ -52,6 +52,7 @@ Failure to present recognizable inputs for any of the prefix parameters result i
 
 Section 2: LIST of currently accepted $VENDOR_COUNTRY_ID codes by country:
 -------------------------------------------------------------------------
+```
 Country name                    Vendor Country ID
 
 Antigua & Barbuda               antigua-ag,-04
@@ -79,13 +80,14 @@ Taiwan                          taipei-tw,+08
 The Netherlands                 amsterdam-nl,+02
 Trinidad & Tobago               trinidad-tt,-04
 United Kingdom                  uk-uk,+00
-
+```
 
 
 
 Section 3: LIST OF ENDPOINTS
 -----------------------------
 [USER AUTHENTICATION/MANAGEMENT ENDPOINTS]
+```
 /fetchregistrationform - Accepts Boolean header flag for ToS.
                          1 = Accepted ToS which fetches looking.glass registration form matching vendor country
                          2 = Not yet accepted ToS which fetches looking.glass ToS form matching vendor country
@@ -111,9 +113,10 @@ Section 3: LIST OF ENDPOINTS
  
  /notificationsettings
 
-
+```
  
  [WALLET ROOT INTERFACE ENDPOINTS - Require user to first be authenticated]
+ ```
  /fetchwalletdashboard - Fetches wallet dashboard.
                   -If wallet is unititialized, returns default wallet view with limited options
                   -If wallet is initialized, returns current balances, total balance
@@ -134,27 +137,33 @@ Section 3: LIST OF ENDPOINTS
  /fetchwalletsettings - Fetches paywith.glass wallet settings menu
  
  /fetchwalletcart - Fetches current active shopping cart for authenticated user
-
+```
 
 
 [DEPOSIT MENU ENDPOINTS]
+```
 
-
+```
 [PAYMENTS MENU ENDPOINTS]
+```
 
-
+```
 [WITHDRAWAL MEUN ENDPOINTS]
+```
 
-
+```
 [TRANSACTION HISTORY MENU ENDPOINTS]
+```
 
-
+```
 [WALLET SETTINGS MENU ENDPOINTS]
+```
 
-
+```
 [WALLET CART MENU ENDPOINTS]
+```
 
-
+```
 
 
 Section 4: ENDPOINT RECEIVING INTERFACE CODE BASE FRAMEWORK
