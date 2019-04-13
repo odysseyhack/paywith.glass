@@ -1,0 +1,2 @@
+RewriteEngine On 
+RewriteRule ^payment/receive?$ ReceivePaymentEndpoint.php [NC,L]

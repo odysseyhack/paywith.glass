@@ -1,0 +1,5 @@
+{
+    "require": {
+        "crada/php-apidoc": "@dev"
+    }
+}
