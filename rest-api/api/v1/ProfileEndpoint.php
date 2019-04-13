@@ -24,7 +24,9 @@ class ProfileEndpoint extends RestServiceBaseEndpoint
     function handleGetRequest()
     {
         $profile = new ProfileRequest();
-        echo json_encode($profile);
+        $response = json_encode($profile);
+        echo $response;
+        return $response;
         // TODO delegate the call to paywith.glass and return the output
     }
 

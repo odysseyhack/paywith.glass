@@ -29,8 +29,10 @@ class ReceivePaymentEndpoint extends RestServiceBaseEndpoint
         if ($isValid) {
             $paymentRequest = new Payment($_POST['id'], $_POST['memo'], $_POST['amount'], $_POST['assetCode'], $_POST['assetIssuer'], $_POST['from']);
             
-            echo json_encode($paymentRequest);
-            // post this request to the paywithglass core system.
+            $response = json_encode($paymentRequest);
+            echo $response;
+            return $response;
+            // TODO implement backend
         }
     }
 

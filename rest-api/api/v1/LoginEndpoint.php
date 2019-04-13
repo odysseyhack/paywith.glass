@@ -23,7 +23,9 @@ class LoginEndpoint extends RestServiceBaseEndpoint
         if ($this->validatePostParameters()) {
             $loginRequest = new LoginRequest($_POST['username'], $_POST['passwordHash']);
             // TODO add integration
-            echo json_encode($loginRequest);
+            $response = json_encode($loginRequest);
+            echo $response;
+            return $response;
         }
     }
 
@@ -34,7 +36,6 @@ class LoginEndpoint extends RestServiceBaseEndpoint
     {
         return  (validateUsername() && validatePasswordHash());
     }
-
 
 }
 

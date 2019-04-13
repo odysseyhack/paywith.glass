@@ -10,7 +10,7 @@ class LoginRequest
     public function __construct($username, $passwordHash)
     {
         $this->username = $username;
-        $this->passwordHash = $username;
+        $this->passwordHash = $passwordHash;
     }
 
     public function getUsername()

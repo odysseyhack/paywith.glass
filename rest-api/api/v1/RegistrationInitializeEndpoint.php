@@ -23,10 +23,12 @@ class RegistrationInitializeEndpoint extends RestServiceBaseEndpoint
         if ($isValid) {
             $initialRegistrationRequest = RegistrationRequest::createForInitializeRegistration($_POST['acceptedTos']);
             if ($initialRegistrationRequest->acceptedTos) {
-                // return verification URL
-                echo "verification url";
+                // TODO return verification URL
+                $verificationUrl = '';
+                echo $verificationUrl;
+                return $verificationUrl;
             } else {
-                // return tos to user
+                // TODO return tos to user
                 echo "tos";
             }
         }

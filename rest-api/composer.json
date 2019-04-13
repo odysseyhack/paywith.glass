@@ -1,5 +1,8 @@
 {
     "require": {
         "crada/php-apidoc": "@dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8"
     }
 }
