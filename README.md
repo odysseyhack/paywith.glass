@@ -107,7 +107,7 @@ Section 3: LIST OF ENDPOINTS
             -password hash
  
  
----All endpoints that follow require authentication---
+---These endpoints require that the user is first authenticated---
  
  /fetchprofile
  
@@ -119,7 +119,7 @@ Section 3: LIST OF ENDPOINTS
 
 ```
  
- [WALLET ROOT INTERFACE ENDPOINTS - Require user to first be authenticated]
+ [WALLET ROOT INTERFACE ENDPOINTS - Require that the user is first authenticated]
  ```
  /fetchwalletdashboard - Fetches wallet dashboard.
                   -If wallet is unititialized, returns default wallet view with limited options
@@ -144,27 +144,27 @@ Section 3: LIST OF ENDPOINTS
 ```
 
 
-[DEPOSIT MENU ENDPOINTS]
+[DEPOSIT MENU ENDPOINTS - Require that the user is first authenticated]
 ```
 
 ```
-[PAYMENTS MENU ENDPOINTS]
+[PAYMENTS MENU ENDPOINTS - Require that the user is first authenticated]
 ```
 
 ```
-[WITHDRAWAL MEUN ENDPOINTS]
+[WITHDRAWAL MEUN ENDPOINTS - Require that the user is first authenticated]
 ```
 
 ```
-[TRANSACTION HISTORY MENU ENDPOINTS]
+[TRANSACTION HISTORY MENU ENDPOINTS - Require that the user is first authenticated]
 ```
 
 ```
-[WALLET SETTINGS MENU ENDPOINTS]
+[WALLET SETTINGS MENU ENDPOINTS - Require that the user is first authenticated]
 ```
 
 ```
-[WALLET CART MENU ENDPOINTS]
+[WALLET CART MENU ENDPOINTS - Require that the user is first authenticated]
 ```
 
 ```
