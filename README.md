@@ -18,7 +18,7 @@ The paywith.glass team objectives for the Odyssey 2019 Hackathon are:
 3. An example of the API in use via a demonstration of how a mobile application can make use of this API to communicate
 with the platform.
 
-================================================================================================================================
+=======================================================================================================================
 
 Section 1: The REST API
 -----------------------
