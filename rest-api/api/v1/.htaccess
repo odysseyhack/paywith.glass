@@ -1,2 +1,3 @@
 RewriteEngine On 
 RewriteRule ^payment/receive?$ ReceivePaymentEndpoint.php [NC,L]
+RewriteRule ^register/initialize?$ RegistrationInitializeEndpoint.php [NC,L]
