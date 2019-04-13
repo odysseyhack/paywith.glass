@@ -71,14 +71,30 @@ ENDPOINT CODE BASE
 ------------------
 
 <?php
+   $VENDOR_DOMAIN_NAME = false;
+   $VENDOR_COUNTRY_ID = false;
+   $USER_ID_HASH = false;
+ 
+  foreach (getallheaders() as $headerkey => $headervalue) {
+    if ($headerkey == 'v') {
+      $VENDOR_DOMAIN_NAME = $headervalue;
+      }
+    elseif ($headerkey == 'cc') {
+      $VENDOR_COUNTRY_ID =  $headervalue;
+      }
+    elseif ($headerkey == 'o') {
+      $USER_ID_HASH = $headervalue;
+      }
+    }
 
-if ( (isset($_REQUEST['v'])) && (isset($_REQUEST['cc'])) && (isset($_REQUEST['o'])) ) {
 
-        $VENDOR_DOMAIN_NAME = $_REQUEST['v'];
-        $VENDOR_COUNTRY_ID = $_REQUEST['cc'];
-        $USER_ID_HASH = $_REQUEST['o'];
+if ( $VENDOR_DOMAIN_NAME && $VENDOR_COUNTRY_ID && $USER_ID_HASH ) {
 
-
+        // Look up $VENDOR_DOMAIN_NAME and $VENDOR_COUNTRY_ID in db to determine the include file that should be loaded
+        // Check if the user is logged in or not. If logged in, present mobile application template from appropriate
+        // country then fetch requested data.
+        
+        // If not logged in, fetch login-page for the matched region.
 
         die();
         }
