@@ -78,7 +78,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion0" href="#collapseOne0"> /payment/receive</a>
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion0" href="#collapseOne0"> /authenticated/payment/receive</a>
         </h4>
     </div>
     <div id="collapseOne0" class="panel-collapse collapse">
@@ -230,7 +230,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/payment/receive" method="post" name="form0" id="form0">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/authenticated/payment/receive" method="post" name="form0" id="form0">
 
         Parameters
         <hr/>
@@ -842,13 +842,853 @@
         </div>
     </div>
 </div>
+<h2>Profile</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion4" href="#collapseOne4"> /authenticated/profile</a>
+        </h4>
+    </div>
+    <div id="collapseOne4" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab4">
+                <li class="active"><a href="#info4" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox4" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample4" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info4">
+                    <div class="well">
+                    fetch your user profile
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>v</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Vendor domain name</td>
+</tr>
+
+<tr>
+    <td>cc</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Vendor country code id</td>
+</tr>
+
+<tr>
+    <td>o</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>User id hash</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox4">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="v">v</label>
+    <input type="text" class="form-control input-sm" id="v" placeholder="Vendor domain name - Ex: " name="v">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="cc">cc</label>
+    <input type="text" class="form-control input-sm" id="cc" placeholder="Vendor country code id - Ex: " name="cc">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="o">o</label>
+    <input type="text" class="form-control input-sm" id="o" placeholder="User id hash - Ex: " name="o">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/authenticated/profile" method="get" name="form4" id="form4">
+
+        Parameters
+        <hr/>
+        
+        <button type="submit" class="btn btn-success send" rel="4">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers4"></pre>
+                                <pre id="response4"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+<hr>
+<pre id="sample_response4">{
+  'personalText':'string',
+  'dob':'string',
+  'location': 'string',
+  'gender' : 'string',
+  'signature' : 'string'
+ }</pre>
+
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion5" href="#collapseOne5"> /authenticated/profile</a>
+        </h4>
+    </div>
+    <div id="collapseOne5" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab5">
+                <li class="active"><a href="#info5" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox5" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample5" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info5">
+                    <div class="well">
+                    Update your user profile
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>v</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Vendor domain name</td>
+</tr>
+
+<tr>
+    <td>cc</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Vendor country code id</td>
+</tr>
+
+<tr>
+    <td>o</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>User id hash</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>personalText</td>
+    <td>string</td>
+    <td>No</td>
+    <td>Your personal profile text</td>
+</tr>
+
+<tr>
+    <td>dob</td>
+    <td>string</td>
+    <td>No</td>
+    <td>Your date of birth</td>
+</tr>
+
+<tr>
+    <td>location</td>
+    <td>string</td>
+    <td>No</td>
+    <td>Your location</td>
+</tr>
+
+<tr>
+    <td>gender</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Your gender</td>
+</tr>
+
+<tr>
+    <td>signature</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Your signature</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox5">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="v">v</label>
+    <input type="text" class="form-control input-sm" id="v" placeholder="Vendor domain name - Ex: " name="v">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="cc">cc</label>
+    <input type="text" class="form-control input-sm" id="cc" placeholder="Vendor country code id - Ex: " name="cc">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="o">o</label>
+    <input type="text" class="form-control input-sm" id="o" placeholder="User id hash - Ex: " name="o">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/authenticated/profile" method="post" name="form5" id="form5">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="personalText">personalText</label>
+    <input type="string" class="form-control input-sm" id="personalText" placeholder="Your personal profile text - Ex: " name="personalText">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="dob">dob</label>
+    <input type="string" class="form-control input-sm" id="dob" placeholder="Your date of birth - Ex: " name="dob">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="location">location</label>
+    <input type="string" class="form-control input-sm" id="location" placeholder="Your location - Ex: " name="location">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="gender">gender</label>
+    <input type="string" class="form-control input-sm" id="gender" placeholder="Your gender - Ex: " name="gender">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="signature">signature</label>
+    <input type="string" class="form-control input-sm" id="signature" placeholder="Your signature - Ex: " name="signature">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="5">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers5"></pre>
+                                <pre id="response5"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample5">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion6" href="#collapseOne6"> /authenticated/profile/security/settings</a>
+        </h4>
+    </div>
+    <div id="collapseOne6" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab6">
+                <li class="active"><a href="#info6" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox6" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample6" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info6">
+                    <div class="well">
+                    fetch your security settings
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>v</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Vendor domain name</td>
+</tr>
+
+<tr>
+    <td>cc</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Vendor country code id</td>
+</tr>
+
+<tr>
+    <td>o</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>User id hash</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox6">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="v">v</label>
+    <input type="text" class="form-control input-sm" id="v" placeholder="Vendor domain name - Ex: " name="v">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="cc">cc</label>
+    <input type="text" class="form-control input-sm" id="cc" placeholder="Vendor country code id - Ex: " name="cc">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="o">o</label>
+    <input type="text" class="form-control input-sm" id="o" placeholder="User id hash - Ex: " name="o">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/authenticated/profile/security/settings" method="get" name="form6" id="form6">
+
+        Parameters
+        <hr/>
+        
+        <button type="submit" class="btn btn-success send" rel="6">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers6"></pre>
+                                <pre id="response6"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+<hr>
+<pre id="sample_response6">{
+  'name':'string',
+  'email':'string',
+  'currentPassword': 'string',
+  'newPassword' : 'string',
+  'confirmNewPassword' : 'string'
+ }</pre>
+
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion7" href="#collapseOne7"> /authenticated/profile/security/settings</a>
+        </h4>
+    </div>
+    <div id="collapseOne7" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab7">
+                <li class="active"><a href="#info7" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox7" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample7" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info7">
+                    <div class="well">
+                    Update your user profile
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>v</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Vendor domain name</td>
+</tr>
+
+<tr>
+    <td>cc</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Vendor country code id</td>
+</tr>
+
+<tr>
+    <td>o</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>User id hash</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>name</td>
+    <td>string</td>
+    <td>No</td>
+    <td>The new profile name</td>
+</tr>
+
+<tr>
+    <td>email</td>
+    <td>string</td>
+    <td>No</td>
+    <td>The new profile email</td>
+</tr>
+
+<tr>
+    <td>currentPassword</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Your current password</td>
+</tr>
+
+<tr>
+    <td>newPassword</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>The new profile password</td>
+</tr>
+
+<tr>
+    <td>confirmNewPassword</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>The new profile password confirmation</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox7">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="v">v</label>
+    <input type="text" class="form-control input-sm" id="v" placeholder="Vendor domain name - Ex: " name="v">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="cc">cc</label>
+    <input type="text" class="form-control input-sm" id="cc" placeholder="Vendor country code id - Ex: " name="cc">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="o">o</label>
+    <input type="text" class="form-control input-sm" id="o" placeholder="User id hash - Ex: " name="o">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/authenticated/profile/security/settings" method="post" name="form7" id="form7">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="name">name</label>
+    <input type="string" class="form-control input-sm" id="name" placeholder="The new profile name - Ex: " name="name">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="email">email</label>
+    <input type="string" class="form-control input-sm" id="email" placeholder="The new profile email - Ex: " name="email">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="currentPassword">currentPassword</label>
+    <input type="string" class="form-control input-sm" id="currentPassword" placeholder="Your current password - Ex: " name="currentPassword">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="newPassword">newPassword</label>
+    <input type="string" class="form-control input-sm" id="newPassword" placeholder="The new profile password - Ex: " name="newPassword">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="confirmNewPassword">confirmNewPassword</label>
+    <input type="string" class="form-control input-sm" id="confirmNewPassword" placeholder="The new profile password confirmation - Ex: " name="confirmNewPassword">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="7">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers7"></pre>
+                                <pre id="response7"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample7">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion8" href="#collapseOne8"> /authenticated/profile/notifications/settings</a>
+        </h4>
+    </div>
+    <div id="collapseOne8" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab8">
+                <li class="active"><a href="#info8" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox8" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample8" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info8">
+                    <div class="well">
+                    fetch your notification settings
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>v</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Vendor domain name</td>
+</tr>
+
+<tr>
+    <td>cc</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Vendor country code id</td>
+</tr>
+
+<tr>
+    <td>o</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>User id hash</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox8">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="v">v</label>
+    <input type="text" class="form-control input-sm" id="v" placeholder="Vendor domain name - Ex: " name="v">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="cc">cc</label>
+    <input type="text" class="form-control input-sm" id="cc" placeholder="Vendor country code id - Ex: " name="cc">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="o">o</label>
+    <input type="text" class="form-control input-sm" id="o" placeholder="User id hash - Ex: " name="o">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/authenticated/profile/notifications/settings" method="get" name="form8" id="form8">
+
+        Parameters
+        <hr/>
+        
+        <button type="submit" class="btn btn-success send" rel="8">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers8"></pre>
+                                <pre id="response8"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
 
         </div>
         <hr>
 
         <div class="row mt0 footer">
             <div class="col-md-6" align="left">
-                Generated on 2019-04-13, 12:05:19
+                Generated on 2019-04-13, 13:06:53
             </div>
             <div class="col-md-6" align="right">
                 <a href="https://github.com/calinrada/php-apidoc" target="_blank">php-apidoc v1.3.8</a>

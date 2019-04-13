@@ -1,5 +1,8 @@
 RewriteEngine On 
-RewriteRule ^payment/receive?$ ReceivePaymentEndpoint.php [NC,L]
 RewriteRule ^register/initialize?$ RegistrationInitializeEndpoint.php [NC,L]
 RewriteRule ^register/submit?$ RegistrationSubmitEndpoint.php [NC,L]
 RewriteRule ^login?$ LoginEndpoint.php [NC,L]
+RewriteRule ^authenticated/profile?$ ProfileEndpoint.php [NC,L]
+RewriteRule ^authenticated/profile/security/settings?$ SecuritySettingsEndpoint.php [NC,L]
+RewriteRule ^authenticated/profile/notification/settings?$ NotificationSettingsEndpoint.php [NC,L]
+RewriteRule ^authenticated/payment/receive?$ ReceivePaymentEndpoint.php [NC,L]

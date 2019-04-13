@@ -5,6 +5,9 @@ require_once 'api/v1/ReceivePaymentEndpoint.php';
 require_once 'api/v1/RegistrationInitializeEndpoint.php';
 require_once 'api/v1/RegistrationSubmitEndpoint.php';
 require_once 'api/v1/LoginEndpoint.php';
+require_once 'api/v1/ProfileEndpoint.php';
+require_once 'api/v1/SecuritySettingsEndpoint.php';
+require_once 'api/v1/NotificationSettingsEndpoint.php'; 
 use Crada\Apidoc\Builder;
 use Crada\Apidoc\Exception;
 
@@ -12,7 +15,10 @@ $classes = array(
     '\ReceivePaymentEndpoint',
     '\RegistrationInitializeEndpoint',
     '\RegistrationSubmitEndpoint',
-    '\LoginEndpoint'
+    '\LoginEndpoint',
+    '\ProfileEndpoint',
+    '\SecuritySettingsEndpoint',
+    '\NotificationSettingsEndpoint'
 );
 $output_dir  = __DIR__.'/apidocs';
 $output_file = 'api.html'; // defaults to index.html
