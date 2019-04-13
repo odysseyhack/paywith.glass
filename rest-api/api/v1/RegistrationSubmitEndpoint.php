@@ -14,7 +14,7 @@ class RegistrationSubmitEndpoint extends RestServiceBaseEndpoint
      * @ApiHeaders(name="cc", type="string", nullable=false, description="Vendor country code id")
      * @ApiHeaders(name="o", type="string", nullable=false, description="User id hash")
      * @ApiParams(name="acceptedTos", type="integer", nullable=false, description="Are the ToS accepted.")
-     * @ApiParams(name="userName", type="string", nullable=false, description="The username to create")
+     * @ApiParams(name="username", type="string", nullable=false, description="The username to create")
      * @ApiParams(name="email", type="string", nullable=false, description="The email attached to this registration")
      * @ApiParams(name="allowOtherUsersToEmailMe", type="integer", nullable=true, description="Allow other users to send you email.")
      * @ApiParams(name="passwordHash", type="string", nullable=false, description="A hash of the password")
@@ -29,7 +29,7 @@ class RegistrationSubmitEndpoint extends RestServiceBaseEndpoint
             if (isset($_POST['allowOtherUsersToEmailMe'])) {
                 $allowOtherUserMail = $_POST['allowOtherUsersToEmailMe'];
             }
-            $submitRequest = RegistrationRequest::createForSubmitRegistration($_POST['acceptedTos'], $_POST['userName'], 
+            $submitRequest = RegistrationRequest::createForSubmitRegistration($_POST['acceptedTos'], $_POST['username'], 
                 $_POST['email'], $allowOtherUserMail, $_POST['passwordHash'], $_POST['verificationCode']);
             // throw submit request to backend.
             print_r($submitRequest);
@@ -41,8 +41,8 @@ class RegistrationSubmitEndpoint extends RestServiceBaseEndpoint
         if (! isset($_POST['acceptedTos'])) {
             header("HTTP/1.0 400 Bad request. Missing 'acceptedTos' parameter");
             return false;
-        } else if (! isset($_POST['userName'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'userName' parameter");
+        } else if (! isset($_POST['username'])) {
+            header("HTTP/1.0 400 Bad request. Missing 'username' parameter");
             return false;
         } else if (! isset($_POST['email'])) {
             header("HTTP/1.0 400 Bad request. Missing 'emailAddres' parameter");

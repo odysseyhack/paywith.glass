@@ -1,6 +1,6 @@
 <?php
 
-class Payment implements JsonSerializable
+class Payment
 {
 
     var $id;
@@ -84,7 +84,4 @@ class Payment implements JsonSerializable
     {
         $this->assetIssuer = $assetIssuer;
     }
-
-    public function jsonSerialize()
-    {}
 }

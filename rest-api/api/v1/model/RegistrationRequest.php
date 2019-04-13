@@ -1,6 +1,6 @@
 <?php
 
-class RegistrationRequest implements JsonSerializable
+class RegistrationRequest
 {
 
     var $acceptedTos;
@@ -144,7 +144,4 @@ class RegistrationRequest implements JsonSerializable
     {
         $this->verificationUrl = $verificationUrl;
     }
-
-    public function jsonSerialize()
-    {}
 }

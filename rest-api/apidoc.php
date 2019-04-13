@@ -4,13 +4,15 @@ include "vendor/autoload.php";
 require_once 'api/v1/ReceivePaymentEndpoint.php';
 require_once 'api/v1/RegistrationInitializeEndpoint.php';
 require_once 'api/v1/RegistrationSubmitEndpoint.php';
+require_once 'api/v1/LoginEndpoint.php';
 use Crada\Apidoc\Builder;
 use Crada\Apidoc\Exception;
 
 $classes = array(
     '\ReceivePaymentEndpoint',
     '\RegistrationInitializeEndpoint',
-    '\RegistrationSubmitEndpoint'
+    '\RegistrationSubmitEndpoint',
+    '\LoginEndpoint'
 );
 $output_dir  = __DIR__.'/apidocs';
 $output_file = 'api.html'; // defaults to index.html
