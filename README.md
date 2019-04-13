@@ -217,9 +217,14 @@ else {
 
 Section 5: TODO
 -----------------------------------------------------------
-1. define list of endpoints and supported operations
+1. Define list of endpoints and supported operations
 2. Implement call / business logic of rest service to core system
-3. look into swagger php docs?
-4. start with vendordomainname, vendorcountryid and useridhash as Q params but if theres time look into moving those as header parameters to get a cleaner API.
+3. Look into swagger php docs?
+4. Start with vendordomainname, vendorcountryid and useridhash as Q params but if theres time look into moving those as header parameters to get a cleaner API.
 
-5.Setup jenkins - DONE
+5. Setup jenkins - DONE
+6. Replace the deep level node.js functions which call the Stellar node with php functions that solve the existing issues
+7. Build the API end-point bridge under the https://txn.paywith.glass domain
+8. Complete the build and new API integration of the front end demo application based on the wireframes
+9. Integrate the front-end into the demo application framework
+10.Clean up demo applicaton framework text and load sequence to work for Odyssey.
