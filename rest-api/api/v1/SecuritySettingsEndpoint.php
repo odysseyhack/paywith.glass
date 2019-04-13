@@ -1,6 +1,7 @@
 <?php
 require_once ('RestServiceBaseEndpoint.php');
 require_once ('model/SecuritySettingsRequest.php');
+require_once ('utility/ValidationFunctions.php');
 
 class SecuritySettingsEndpoint extends RestServiceBaseEndpoint
 {
@@ -46,33 +47,54 @@ class SecuritySettingsEndpoint extends RestServiceBaseEndpoint
     {
         if ($this->validatePostParameters()) {
             $securitySettingsRequest = new SecuritySettingsRequest();
-            if(isset($_POST['name'])) { 
-                $securitySettingsRequest->name = $_POST['name'];
-            }
-            if(isset($_POST['email'])) {
-                $securitySettingsRequest->email = $_POST['email'];
-            }
-            if(isset($_POST['currentPassword'])) {
-                $securitySettingsRequest->currentPassword = $_POST['currentPassword'];
-            }
-            if(isset($_POST['newPassword'])) {
-                $securitySettingsRequest->newPassword = $_POST['newPassword'];
-            }
-            if(isset($_POST['confirmNewPassword'])) { 
-                $securitySettingsRequest->confirmNewPassword = $_POST['confirmNewPassword'];
-            }
+            $this->fillInName($securitySettingsRequest);
+            $this->fillInEmail($securitySettingsRequest);
+            $this->fillInCurrentPassword($securitySettingsRequest);
+            $this->fillInNewPassword($securitySettingsRequest);
+            $this->fillInConfirmNewPassword($securitySettingsRequest);
             echo json_encode($securitySettingsRequest);
-            //TODO implement backend call with the securitysettings request object.
+            // TODO implement backend call with the securitysettings request object.
+        }
+    }
+
+    private function fillInConfirmNewPassword($securitySettingsRequest)
+    {
+        if (isset($_POST['confirmNewPassword'])) {
+            $securitySettingsRequest->confirmNewPassword = $_POST['confirmNewPassword'];
+        }
+    }
+
+    private function fillInNewPassword($securitySettingsRequest)
+    {
+        if (isset($_POST['newPassword'])) {
+            $securitySettingsRequest->newPassword = $_POST['newPassword'];
+        }
+    }
+
+    private function fillInCurrentPassword($securitySettingsRequest)
+    {
+        if (isset($_POST['currentPassword'])) {
+            $securitySettingsRequest->currentPassword = $_POST['currentPassword'];
+        }
+    }
+
+    private function fillInEmail($securitySettingsRequest)
+    {
+        if (isset($_POST['email'])) {
+            $securitySettingsRequest->email = $_POST['email'];
+        }
+    }
+
+    private function fillInName($securitySettingsRequest)
+    {
+        if (isset($_POST['name'])) {
+            $securitySettingsRequest->name = $_POST['name'];
         }
     }
 
     function validatePostParameters()
     {
-        if (! isset($_POST['currentPassword'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'currentPassword' parameter");
-            return false;
-        }
-        return true;
+        return validateCurrentPassword();
     }
 }
 

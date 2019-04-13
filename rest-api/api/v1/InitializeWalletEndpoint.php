@@ -1,6 +1,7 @@
 <?php
 require_once ('RestServiceBaseEndpoint.php');
 require_once ('model/InitializeWalletRequest.php');
+require_once ('utility/ValidationFunctions.php');
 
 class InitializeWalletEndpoint extends RestServiceBaseEndpoint
 {
@@ -23,57 +24,69 @@ class InitializeWalletEndpoint extends RestServiceBaseEndpoint
     function handlePostRequest()
     {
         if ($this->validatePostParameters()) {
-            $initializeWalletRequest = new InitializeWalletRequest();
-            if (isset($_POST['name'])) {
-                $initializeWalletRequest->name = $_POST['name'];
-            }
-            if (isset($_POST['surname'])) {
-                $initializeWalletRequest->surname = $_POST['surname'];
-            }
-            if (isset($_POST['address'])) {
-                $initializeWalletRequest->address = $_POST['address'];
-            }
-            if (isset($_POST['city'])) {
-                $initializeWalletRequest->city = $_POST['city'];
-            }
-            if (isset($_POST['postalcode'])) {
-                $initializeWalletRequest->postalcode = $_POST['postalcode'];
-            }
-            if (isset($_POST['country'])) {
-                $initializeWalletRequest->country = $_POST['country'];
-            }
+            $initializeWalletRequest = $this->buildInitializeWalletRequest();
             echo json_encode($initializeWalletRequest);
-            // TODO implement backend call with the init wallet  request object.
+            // TODO implement backend call with the init wallet request object.
+        }
+    }
+
+    function buildInitializeWalletRequest()
+    {
+        $initializeWalletRequest = new InitializeWalletRequest();
+        $this->fillInName($initializeWalletRequest);
+        $this->fillInSurname($initializeWalletRequest);
+        $this->fillInAddress($initializeWalletRequest);
+        $this->fillInCity($initializeWalletRequest);
+        $this->fillInPostalCode($initializeWalletRequest);
+        $this->fillInCountry($initializeWalletRequest);
+        return $initializeWalletRequest;
+    }
+
+    private function fillInCountry($initializeWalletRequest)
+    {
+        if (isset($_POST['country'])) {
+            $initializeWalletRequest->country = $_POST['country'];
+        }
+    }
+
+    private function fillInPostalCode($initializeWalletRequest)
+    {
+        if (isset($_POST['postalcode'])) {
+            $initializeWalletRequest->postalcode = $_POST['postalcode'];
+        }
+    }
+
+    private function fillInCity($initializeWalletRequest)
+    {
+        if (isset($_POST['city'])) {
+            $initializeWalletRequest->city = $_POST['city'];
+        }
+    }
+
+    private function fillInAddress($initializeWalletRequest)
+    {
+        if (isset($_POST['address'])) {
+            $initializeWalletRequest->address = $_POST['address'];
+        }
+    }
+
+    private function fillInSurname($initializeWalletRequest)
+    {
+        if (isset($_POST['surname'])) {
+            $initializeWalletRequest->surname = $_POST['surname'];
+        }
+    }
+
+    private function fillInName($initializeWalletRequest)
+    {
+        if (isset($_POST['name'])) {
+            $initializeWalletRequest->name = $_POST['name'];
         }
     }
 
     function validatePostParameters()
     {
-        if (! isset($_POST['name'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'name' parameter");
-            return false;
-        }
-        if (! isset($_POST['surname'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'surname' parameter");
-            return false;
-        }
-        if (! isset($_POST['address'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'address' parameter");
-            return false;
-        }
-        if (! isset($_POST['city'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'city' parameter");
-            return false;
-        }
-        if (! isset($_POST['postalcode'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'postalcode' parameter");
-            return false;
-        }
-        if (! isset($_POST['country'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'country' parameter");
-            return false;
-        }
-        return true;
+        return (validateName() && validateSurname() && validateAddress() && validateCity() && validatePostalcoded() && validateCountry());
     }
 }
 

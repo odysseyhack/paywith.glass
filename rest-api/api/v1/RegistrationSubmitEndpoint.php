@@ -1,6 +1,7 @@
 <?php
 require_once ('RestServiceBaseEndpoint.php');
 require_once ('model/RegistrationRequest.php');
+require_once ('utility/ValidationFunctions.php');
 
 class RegistrationSubmitEndpoint extends RestServiceBaseEndpoint
 {
@@ -25,36 +26,16 @@ class RegistrationSubmitEndpoint extends RestServiceBaseEndpoint
         $isValid = $this->validatePostRequest();
 
         if ($isValid) {
-            $allowOtherUserMail = 0;
-            if (isset($_POST['allowOtherUsersToEmailMe'])) {
-                $allowOtherUserMail = $_POST['allowOtherUsersToEmailMe'];
-            }
-            $submitRequest = RegistrationRequest::createForSubmitRegistration($_POST['acceptedTos'], $_POST['username'], 
-                $_POST['email'], $allowOtherUserMail, $_POST['passwordHash'], $_POST['verificationCode']);
+            $allowOtherUserMail = isOtherUserEmailAllowed();
+            $submitRequest = RegistrationRequest::createForSubmitRegistration($_POST['acceptedTos'], $_POST['username'], $_POST['email'], $allowOtherUserMail, $_POST['passwordHash'], $_POST['verificationCode']);
             // throw submit request to backend.
-            print_r($submitRequest);
+            echo json_encode($submitRequest);
         }
     }
 
     function validatePostRequest()
     {
-        if (! isset($_POST['acceptedTos'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'acceptedTos' parameter");
-            return false;
-        } else if (! isset($_POST['username'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'username' parameter");
-            return false;
-        } else if (! isset($_POST['email'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'emailAddres' parameter");
-            return false;
-        } else if (! isset($_POST['passwordHash'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'passwordHash' parameter");
-            return false;
-        } else if (! isset($_POST['verificationCode'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'verificationCode' parameter");
-            return false;
-        }
-        return true;
+        return (validateAcceptedToS() && validateUsername() && validateEmail() && validatePasswordHash() && validateVerificationCode());
     }
 }
 

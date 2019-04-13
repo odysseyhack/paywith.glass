@@ -46,23 +46,48 @@ class ProfileEndpoint extends RestServiceBaseEndpoint
     {
         if ($this->validatePostParameters()) {
             $profile = new ProfileRequest();
-            if (isset($_POST['personalText'])) {
-                $profile->personalText = $_POST['personalText'];
-            }
-            if (isset($_POST['dob'])) {
-                $profile->dateOfBirth = $_POST['dob'];
-            }
-            if (isset($_POST['location'])) {
-                $profile->location = $_POST['location'];
-            }
-            if (isset($_POST['gender'])) {
-                $profile->gender = $_POST['gender'];
-            }
-            if (isset($_POST['signature'])) {
-                $profile->signature = $_POST['signature'];
-            }
+            $this->fillInPersonalText($profile);
+            $this->fillInDateOfBirth($profile);
+            $this->fillInLocation($profile);
+            $this->fillInGender($profile);
+            $this->fillInSignature($profile);
             echo json_encode($profile);
             // TODO send profile to paywith glass
+        }
+    }
+
+    private function fillInSignature($profile)
+    {
+        if (isset($_POST['signature'])) {
+            $profile->signature = $_POST['signature'];
+        }
+    }
+
+    private function fillInGender($profile)
+    {
+        if (isset($_POST['gender'])) {
+            $profile->gender = $_POST['gender'];
+        }
+    }
+
+    private function fillInLocation($profile)
+    {
+        if (isset($_POST['location'])) {
+            $profile->location = $_POST['location'];
+        }
+    }
+
+    private function fillInDateOfBirth($profile)
+    {
+        if (isset($_POST['dob'])) {
+            $profile->dateOfBirth = $_POST['dob'];
+        }
+    }
+
+    private function fillInPersonalText($profile)
+    {
+        if (isset($_POST['personalText'])) {
+            $profile->personalText = $_POST['personalText'];
         }
     }
 

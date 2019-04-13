@@ -1,6 +1,7 @@
 <?php
 require_once ('RestServiceBaseEndpoint.php');
 require_once ('model/LoginRequest.php');
+require_once ('utility/ValidationFunctions.php');
 
 class LoginEndpoint extends RestServiceBaseEndpoint
 {
@@ -20,8 +21,8 @@ class LoginEndpoint extends RestServiceBaseEndpoint
     {
         if ($this->validatePostParameters()) {
             $loginRequest = new LoginRequest($_POST['username'], $_POST['passwordHash']);
-            //TODO add integration
-            print_r($loginRequest);
+            // TODO add integration
+            echo json_encode($loginRequest);
         }
     }
 
@@ -30,17 +31,11 @@ class LoginEndpoint extends RestServiceBaseEndpoint
      */
     function validatePostParameters()
     {
-        if (! isset($_POST['username'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'username' parameter");
-            return false;
-        } else if (! isset($_POST['passwordHash'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'passwordHash' parameter");
-            return false;
-        }
-        return true;
+        return  (validateUsername() && validatePasswordHash());
     }
-}
 
+
+}
 
 $endpoint = new LoginEndpoint();
 $endpoint->handleRequest($_SERVER['REQUEST_METHOD']);

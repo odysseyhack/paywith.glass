@@ -1,6 +1,7 @@
 <?php
 require_once ('RestServiceBaseEndpoint.php');
 require_once ('model/Payment.php');
+require_once ('utility/ValidationFunctions.php');
 
 class ReceivePaymentEndpoint extends RestServiceBaseEndpoint
 {
@@ -26,6 +27,8 @@ class ReceivePaymentEndpoint extends RestServiceBaseEndpoint
 
         if ($isValid) {
             $paymentRequest = new Payment($_POST['id'], $_POST['memo'], $_POST['amount'], $_POST['assetCode'], $_POST['assetIssuer'], $_POST['from']);
+            
+            echo json_encode($paymentRequest);
             // post this request to the paywithglass core system.
         }
     }
@@ -35,26 +38,7 @@ class ReceivePaymentEndpoint extends RestServiceBaseEndpoint
      */
     function validatePostParameters()
     {
-        if (! isset($_POST['id'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'id' parameter");
-            return false;
-        } else if (! isset($_POST['memo'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'memo' parameter");
-            return false;
-        } else if (! isset($_POST['amount'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'amount' parameter");
-            return false;
-        } else if (! isset($_POST['assetCode'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'assetCode' parameter");
-            return false;
-        } else if (! isset($_POST['assetIssuer'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'assetIssuer' parameter");
-            return false;
-        } else if (! isset($_POST['from'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'from' parameter");
-            return false;
-        }
-        return true;
+        return (validateId() && validateMemo() && validateAmount() && validateAssetCode() && validateAssetIssuer() && validateFrom());
     }
 }
 

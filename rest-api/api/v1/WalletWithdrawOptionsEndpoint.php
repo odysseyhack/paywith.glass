@@ -15,7 +15,7 @@ class WalletWithdrawOptionsEndpoint extends RestServiceBaseEndpoint
      * @ApiReturn(type="object", sample="{
      *  [
      *  'option1',
-     *  'option2', 
+     *  'option2',
      *  'option3'
      *  ]
      * }")
@@ -25,7 +25,6 @@ class WalletWithdrawOptionsEndpoint extends RestServiceBaseEndpoint
         echo "return list of strings withdraw options";
         // TODO delegate the call to paywith.glass and return the output
     }
-    
 }
 
 $endpoint = new WalletWithdrawOptionsEndpoint();

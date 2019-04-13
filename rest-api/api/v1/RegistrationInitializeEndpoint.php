@@ -1,10 +1,13 @@
 <?php
 require_once ('RestServiceBaseEndpoint.php');
 require_once ('model/RegistrationRequest.php');
+require_once ('utility/ValidationFunctions.php');
 
 class RegistrationInitializeEndpoint extends RestServiceBaseEndpoint
 {
+
     /**
+     *
      * @ApiDescription(section="Registration", description="Initialize a new registration")
      * @ApiHeaders(name="v", type="string", nullable=false, description="Vendor domain name")
      * @ApiHeaders(name="cc", type="string", nullable=false, description="Vendor country code id")
@@ -30,12 +33,7 @@ class RegistrationInitializeEndpoint extends RestServiceBaseEndpoint
 
     function validateRequest()
     {
-        // validate all parameters are present
-        if (! isset($_POST['acceptedTos'])) {
-            header("HTTP/1.0 400 Bad request. Missing 'acceptedTos' parameter");
-            return false;
-        }
-        return true;
+        return validateAcceptedToS();
     }
 }
 
