@@ -6,6 +6,9 @@ class RegistrationInitializeEndpoint extends RestServiceBaseEndpoint
 {
     /**
      * @ApiDescription(section="Registration", description="Initialize a new registration")
+     * @ApiHeaders(name="v", type="string", nullable=false, description="Vendor domain name")
+     * @ApiHeaders(name="cc", type="string", nullable=false, description="Vendor country code id")
+     * @ApiHeaders(name="o", type="string", nullable=false, description="User id hash")
      * @ApiMethod(type="post")
      * @ApiRoute(name="/register/initialize")
      * @ApiParams(name="acceptedTos", type="integer", nullable=true, description="Indicates whether the user has accepted tos (1) or not (0).")

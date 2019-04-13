@@ -9,6 +9,9 @@ class ReceivePaymentEndpoint extends RestServiceBaseEndpoint
      *
      * @ApiDescription(section="Payment", description="Post a new payment")
      * @ApiMethod(type="post")
+     * @ApiHeaders(name="v", type="string", nullable=false, description="Vendor domain name")
+     * @ApiHeaders(name="cc", type="string", nullable=false, description="Vendor country code id")
+     * @ApiHeaders(name="o", type="string", nullable=false, description="User id hash")
      * @ApiRoute(name="/payment/receive")
      * @ApiParams(name="id", type="string", nullable=false, description="paymentId")
      * @ApiParams(name="amount", type="double", nullable=false, description="The amount to transfer")
