@@ -29,12 +29,13 @@ paywith.glass uses a simple http REST API whereby calls go to the following addr
   https://txn.paywith.glass
   
 All calls must be seeded with the following php POST/GET headers:
+```
   v=$VENDOR_DOMAIN_NAME
   cc=$VENDOR_COUNTRY_ID
   o=$USER_ID_HASH
-  
-  eg - https://txn.paywith.glass/api/v1/register/submit
 
+  eg - https://txn.paywith.glass/api/v1/register/submit
+```
 All calls must include identification of:
     1. The vendor via a unique domain name "$VENDOR_DOMAIN_NAME" (default is paywith.glass/smdwireless.com)
     2. The country code of the vendor under which the account falls "$VENDOR_COUNTRY_ID" (default is uk-uk,+00/amsterdam-nl,+02)
