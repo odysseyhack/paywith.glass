@@ -104,6 +104,8 @@ LIST OF ENDPOINTS
                   -If wallet is initialized, returns current balances, total balance
  
  /fetchdepositmenu - Fetches menu options for deposit actions
+    (this replaces the current POST call: https://www.smdwireless.com/uk/?action=looking.glass.bar&depositmethod=creditdebit&refresh=loaddepositoptionssubmenu)
+ 
  
  /fetchpaymentmenu - Fetches menu options for payments and remittance actions
  
