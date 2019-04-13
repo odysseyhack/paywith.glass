@@ -159,7 +159,7 @@ Section 3: LIST OF ENDPOINTS
 
 Section 4: ENDPOINT RECEIVING INTERFACE CODE BASE FRAMEWORK
 -----------------------------------------------------------
-
+```
 <?php
    $VENDOR_DOMAIN_NAME = false;
    $VENDOR_COUNTRY_ID = false;
@@ -199,7 +199,7 @@ else {
         }
 
 ?>
-
+```
 
 
 Section 5: TODO
