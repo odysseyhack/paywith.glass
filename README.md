@@ -107,6 +107,8 @@ Section 3: LIST OF ENDPOINTS
             -password hash
  
  
+---All endpoints that follow require authentication---
+ 
  /fetchprofile
  
  /changeavatar
