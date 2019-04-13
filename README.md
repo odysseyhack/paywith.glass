@@ -13,7 +13,7 @@ Introducing the paywith.glass public REST API including
 
 
 The paywith.glass team objectives for the Odyssey 2019 Hackathon are:
-1. The definition of the first Public REST API rules for the paywith.glass platform (v0.1)
+1. The definition of the first Public REST API for the paywith.glass platform (v0.1)
 2. The release of the initial documentation for this API
 3. An example of the API in use via a demonstration of how a mobile application can make use of this API to communicate
 with the platform.
