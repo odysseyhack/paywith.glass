@@ -1682,13 +1682,232 @@
         </div>
     </div>
 </div>
+<h2>Wallet</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion9" href="#collapseOne9"> /authenticated/wallet/initialize</a>
+        </h4>
+    </div>
+    <div id="collapseOne9" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab9">
+                <li class="active"><a href="#info9" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox9" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample9" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info9">
+                    <div class="well">
+                    Initialize your wallet
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>v</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Vendor domain name</td>
+</tr>
+
+<tr>
+    <td>cc</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Vendor country code id</td>
+</tr>
+
+<tr>
+    <td>o</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>User id hash</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>name</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Your name</td>
+</tr>
+
+<tr>
+    <td>surname</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Your surname</td>
+</tr>
+
+<tr>
+    <td>address</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Your street and number</td>
+</tr>
+
+<tr>
+    <td>city</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Your city</td>
+</tr>
+
+<tr>
+    <td>postalcode</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Your postal code</td>
+</tr>
+
+<tr>
+    <td>country</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Your country</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox9">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="v">v</label>
+    <input type="text" class="form-control input-sm" id="v" placeholder="Vendor domain name - Ex: " name="v">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="cc">cc</label>
+    <input type="text" class="form-control input-sm" id="cc" placeholder="Vendor country code id - Ex: " name="cc">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="o">o</label>
+    <input type="text" class="form-control input-sm" id="o" placeholder="User id hash - Ex: " name="o">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/authenticated/wallet/initialize" method="post" name="form9" id="form9">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="name">name</label>
+    <input type="string" class="form-control input-sm" id="name" placeholder="Your name - Ex: " name="name">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="surname">surname</label>
+    <input type="string" class="form-control input-sm" id="surname" placeholder="Your surname - Ex: " name="surname">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="address">address</label>
+    <input type="string" class="form-control input-sm" id="address" placeholder="Your street and number - Ex: " name="address">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="city">city</label>
+    <input type="string" class="form-control input-sm" id="city" placeholder="Your city - Ex: " name="city">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="postalcode">postalcode</label>
+    <input type="string" class="form-control input-sm" id="postalcode" placeholder="Your postal code - Ex: " name="postalcode">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="country">country</label>
+    <input type="string" class="form-control input-sm" id="country" placeholder="Your country - Ex: " name="country">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="9">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers9"></pre>
+                                <pre id="response9"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample9">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
 
         </div>
         <hr>
 
         <div class="row mt0 footer">
             <div class="col-md-6" align="left">
-                Generated on 2019-04-13, 13:06:53
+                Generated on 2019-04-13, 14:19:36
             </div>
             <div class="col-md-6" align="right">
                 <a href="https://github.com/calinrada/php-apidoc" target="_blank">php-apidoc v1.3.8</a>
