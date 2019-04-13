@@ -1902,12 +1902,302 @@
     </div>
 </div>
 
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion10" href="#collapseOne10"> /authenticated/wallet/depositoptions</a>
+        </h4>
+    </div>
+    <div id="collapseOne10" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab10">
+                <li class="active"><a href="#info10" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox10" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample10" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info10">
+                    <div class="well">
+                    fetch available deposit options 
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>v</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Vendor domain name</td>
+</tr>
+
+<tr>
+    <td>cc</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Vendor country code id</td>
+</tr>
+
+<tr>
+    <td>o</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>User id hash</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox10">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="v">v</label>
+    <input type="text" class="form-control input-sm" id="v" placeholder="Vendor domain name - Ex: " name="v">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="cc">cc</label>
+    <input type="text" class="form-control input-sm" id="cc" placeholder="Vendor country code id - Ex: " name="cc">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="o">o</label>
+    <input type="text" class="form-control input-sm" id="o" placeholder="User id hash - Ex: " name="o">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/authenticated/wallet/depositoptions" method="get" name="form10" id="form10">
+
+        Parameters
+        <hr/>
+        
+        <button type="submit" class="btn btn-success send" rel="10">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers10"></pre>
+                                <pre id="response10"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample10">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+<hr>
+<pre id="sample_response10">{
+  [
+  'option1',
+  'option2', 
+  'option3'
+  ]
+ }</pre>
+
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion11" href="#collapseOne11"> /authenticated/wallet/withdrawoptions</a>
+        </h4>
+    </div>
+    <div id="collapseOne11" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab11">
+                <li class="active"><a href="#info11" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox11" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample11" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info11">
+                    <div class="well">
+                    fetch available deposit options 
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>v</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Vendor domain name</td>
+</tr>
+
+<tr>
+    <td>cc</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Vendor country code id</td>
+</tr>
+
+<tr>
+    <td>o</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>User id hash</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox11">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="v">v</label>
+    <input type="text" class="form-control input-sm" id="v" placeholder="Vendor domain name - Ex: " name="v">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="cc">cc</label>
+    <input type="text" class="form-control input-sm" id="cc" placeholder="Vendor country code id - Ex: " name="cc">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="o">o</label>
+    <input type="text" class="form-control input-sm" id="o" placeholder="User id hash - Ex: " name="o">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/authenticated/wallet/withdrawoptions" method="get" name="form11" id="form11">
+
+        Parameters
+        <hr/>
+        
+        <button type="submit" class="btn btn-success send" rel="11">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers11"></pre>
+                                <pre id="response11"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample11">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+<hr>
+<pre id="sample_response11">{
+  [
+  'option1',
+  'option2', 
+  'option3'
+  ]
+ }</pre>
+
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
         </div>
         <hr>
 
         <div class="row mt0 footer">
             <div class="col-md-6" align="left">
-                Generated on 2019-04-13, 14:19:36
+                Generated on 2019-04-13, 14:45:04
             </div>
             <div class="col-md-6" align="right">
                 <a href="https://github.com/calinrada/php-apidoc" target="_blank">php-apidoc v1.3.8</a>

@@ -7,3 +7,5 @@ RewriteRule ^authenticated/profile/security/settings?$ SecuritySettingsEndpoint.
 RewriteRule ^authenticated/profile/notification/settings?$ NotificationSettingsEndpoint.php [NC,L]
 RewriteRule ^authenticated/payment/receive?$ ReceivePaymentEndpoint.php [NC,L]
 RewriteRule ^authenticated/wallet/initialize?$ InitializeWalletEndpoint.php [NC,L]
+RewriteRule ^authenticated/wallet/depositoptions?$ WalletDepositOptionsEndpoint.php [NC,L]
+RewriteRule ^authenticated/wallet/withdrawoptions?$ WalletWithdrawOptionsEndpoint.php [NC,L]

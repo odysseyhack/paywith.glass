@@ -9,6 +9,8 @@ require_once 'api/v1/ProfileEndpoint.php';
 require_once 'api/v1/SecuritySettingsEndpoint.php';
 require_once 'api/v1/NotificationSettingsEndpoint.php'; 
 require_once 'api/v1/InitializeWalletEndpoint.php';
+require_once 'api/v1/WalletDepositOptionsEndpoint.php';
+require_once 'api/v1/WalletWithdrawOptionsEndpoint.php'; 
 use Crada\Apidoc\Builder;
 use Crada\Apidoc\Exception;
 
@@ -20,7 +22,9 @@ $classes = array(
     '\ProfileEndpoint',
     '\SecuritySettingsEndpoint',
     '\NotificationSettingsEndpoint',
-    '\InitializeWalletEndpoint'
+    '\InitializeWalletEndpoint',
+    '\WalletDepositOptionsEndpoint',
+    '\WalletWithdrawOptionsEndpoint'
 );
 $output_dir  = __DIR__.'/apidocs';
 $output_file = 'api.html'; // defaults to index.html
