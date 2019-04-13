@@ -18,7 +18,7 @@ The paywith.glass team objectives for the Odyssey 2019 Hackathon are:
 3. An example of the API in use via a demonstration of how a mobile application can make use of this API to communicate
 with the platform.
 
-=====================================================================================================
+================================================================================================
 
 Section 1: The REST API
 -----------------------
@@ -28,12 +28,12 @@ DESCRIPTION
 paywith.glass uses a simple http REST API whereby calls go to the following address on port 443 (https):
   https://txn.paywith.glass
   
-All calls are prefixed with the following php POST/GET headers:
+All calls must be seeded with the following php POST/GET headers:
   v=$VENDOR_DOMAIN_NAME
   cc=$VENDOR_COUNTRY_ID
   o=$USER_ID_HASH
   
-  eg - https://txn.paywith.glass/
+  eg - https://txn.paywith.glass/api/v1/register/submit
 
 All calls must include identification of:
     1. The vendor via a unique domain name "$VENDOR_DOMAIN_NAME" (default is paywith.glass/smdwireless.com)
@@ -45,13 +45,13 @@ has already been standardized across our entire ecosystem.
 
 looking.glass authentication relies on the user's php session id. If a user connects to the service with session ID that is recognized as being owned by a guest user, the default action returns the looking.glass login form.
 
-Failure to present recognizable inputs for any of the prefix parameters result in a 301 redirection to https://paywith.glass.
+Failure to present recognizable inputs for any of the prefix parameters result in a 301 redirection to https://paywith.glass
 
 
 
 
-Section 2: LIST of accepted $VENDOR_COUNTRY_ID codes by country:
----------------------------------------------------------------
+Section 2: LIST of currently accepted $VENDOR_COUNTRY_ID codes by country:
+-------------------------------------------------------------------------
 Country name                    Vendor Country ID
 
 Antigua & Barbuda               antigua-ag,-04
@@ -120,7 +120,9 @@ Section 3: LIST OF ENDPOINTS
  
  /fetchdepositmenu - Fetches menu options for deposit actions
     (for example this replaces the current POST call:
-     https://www.smdwireless.com/uk/?action=looking.glass.bar&depositmethod=creditdebit&refresh=loaddepositoptionssubmenu)
+     https://www.smdwireless.com/uk/?action=looking.glass.bar&depositmethod=creditdebit&refresh=loaddepositoptionssubmenu
+     with this:
+     https://txn.paywith.glass/api/v1/fetchdepositmenu)
  
  
  /fetchpaymentmenu - Fetches menu options for payments and remittance actions
