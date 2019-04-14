@@ -34,8 +34,8 @@ class LoginEndpoint extends RestServiceBaseEndpoint
      */
     function validatePostParameters()
     {
-        $validator = new ValidationFunctions();
-        $userValidator = new UserValidationFunctions();
+        $validator = ValidationFunctionsFactory::create();
+        $userValidator = UserValidationFunctionsFactory::create();
         return  ($userValidator->validateUsername() && $validator->validatePasswordHash());
     }
 

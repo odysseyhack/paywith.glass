@@ -1,7 +1,8 @@
 <?php
 require_once ('endpoint/RestServiceBaseEndpoint.php');
 require_once ('model/InitializeWalletRequest.php');
-require_once ('utility/ValidationFunctions.php');
+require_once ('utility/ValidationFunctionsFactory.php');
+
 require_once ('utility/UserValidationFunctions.php');
 
 class InitializeWalletEndpoint extends RestServiceBaseEndpoint
@@ -87,8 +88,8 @@ class InitializeWalletEndpoint extends RestServiceBaseEndpoint
 
     function validatePostParameters()
     {
-        $validator = new ValidationFunctions();
-        $userValidator = new UserValidationFunctions();
+        $validator = ValidationFunctionsFactory::create();
+        $userValidator = UserValidationFunctionsFactory::create();
         return ($userValidator->validateName() && $userValidator->validateSurname() && $validator->validateAddress() && $validator->validateCity() && $validator->validatePostalcoded() && $validator->validateCountry());
     }
 }

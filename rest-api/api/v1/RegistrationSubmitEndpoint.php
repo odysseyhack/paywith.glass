@@ -27,7 +27,7 @@ class RegistrationSubmitEndpoint extends RestServiceBaseEndpoint
         $isValid = $this->validatePostRequest();
 
         if ($isValid) {
-            $validator = new ValidationFunctions();
+            $validator = ValidationFunctionsFactory::create();
             $allowOtherUserMail = $validator->isOtherUserEmailAllowed();
             $submitRequest = RegistrationRequest::createForSubmitRegistration($_POST['acceptedTos'], $_POST['username'], $_POST['email'], $allowOtherUserMail, $_POST['passwordHash'], $_POST['verificationCode']);
             // throw submit request to backend.
@@ -37,8 +37,8 @@ class RegistrationSubmitEndpoint extends RestServiceBaseEndpoint
 
     function validatePostRequest()
     {
-        $validator = new ValidationFunctions();
-        $userValidator = new UserValidationFunctions();
+        $validator = ValidationFunctionsFactory::create();
+        $userValidator = UserValidationFunctionsFactory::create();
         return ($validator->validateAcceptedToS() && $userValidator->validateUsername() && 
             $userValidator->validateEmail() && $validator->validatePasswordHash() && $validator->validateVerificationCode());
     }
