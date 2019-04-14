@@ -36,7 +36,8 @@ class RegistrationInitializeEndpoint extends RestServiceBaseEndpoint
 
     function validateRequest()
     {
-        return validateAcceptedToS();
+        $validator = new ValidationFunctions();
+        return $validator->validateAcceptedToS();
     }
 }
 

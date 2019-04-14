@@ -1,129 +1,131 @@
 <?php
+require_once 'ValidationFunctionsInterface.php';
 
-function isOtherUserEmailAllowed()
+class ValidationFunctions implements ValidationFunctionsInterface
 {
-    if (isset($_POST['allowOtherUsersToEmailMe'])) {
-        return $_POST['allowOtherUsersToEmailMe'];
+
+    function isOtherUserEmailAllowed()
+    {
+        if (isset($_POST['allowOtherUsersToEmailMe'])) {
+            return $_POST['allowOtherUsersToEmailMe'];
+        }
+        return 0;
     }
-    return 0;
-}
 
-function validateVerificationCode()
-{
-    if (! isset($_POST['verificationCode'])) {
-        header("HTTP/1.0 400 Bad request. Missing 'verificationCode' parameter");
-        return false;
+    function validateVerificationCode()
+    {
+        if (! isset($_POST['verificationCode'])) {
+            header("HTTP/1.0 400 Bad request. Missing 'verificationCode' parameter");
+            return false;
+        }
+        return true;
     }
-    return true;
-}
 
-
-function validatePasswordHash()
-{
-    if (! isset($_POST['passwordHash'])) {
-        header("HTTP/1.0 400 Bad request. Missing 'passwordHash' parameter");
-        return false;
+    function validatePasswordHash()
+    {
+        if (! isset($_POST['passwordHash'])) {
+            header("HTTP/1.0 400 Bad request. Missing 'passwordHash' parameter");
+            return false;
+        }
+        return true;
     }
-    return true;
-}
 
-function validateCountry()
-{
-    if (! isset($_POST['country'])) {
-        header("HTTP/1.0 400 Bad request. Missing 'country' parameter");
-        return false;
+    function validateCountry()
+    {
+        if (! isset($_POST['country'])) {
+            header("HTTP/1.0 400 Bad request. Missing 'country' parameter");
+            return false;
+        }
+        return true;
     }
-    return true;
-}
 
-function validatePostalcoded()
-{
-    if (! isset($_POST['postalcode'])) {
-        header("HTTP/1.0 400 Bad request. Missing 'postalcode' parameter");
-        return false;
+    function validatePostalcoded()
+    {
+        if (! isset($_POST['postalcode'])) {
+            header("HTTP/1.0 400 Bad request. Missing 'postalcode' parameter");
+            return false;
+        }
+        return true;
     }
-    return true;
-}
 
-function validateCity()
-{
-    if (! isset($_POST['city'])) {
-        header("HTTP/1.0 400 Bad request. Missing 'city' parameter");
-        return false;
+    function validateCity()
+    {
+        if (! isset($_POST['city'])) {
+            header("HTTP/1.0 400 Bad request. Missing 'city' parameter");
+            return false;
+        }
+        return true;
     }
-    return true;
-}
 
-function validateAddress()
-{
-    if (! isset($_POST['address'])) {
-        header("HTTP/1.0 400 Bad request. Missing 'address' parameter");
-        return false;
+    function validateAddress()
+    {
+        if (! isset($_POST['address'])) {
+            header("HTTP/1.0 400 Bad request. Missing 'address' parameter");
+            return false;
+        }
+        return true;
     }
-    return true;
-}
 
-
-
-function validateFrom()
-{
-    if (! isset($_POST['from'])) {
-        header("HTTP/1.0 400 Bad request. Missing 'from' parameter");
-        return false;
+    function validateFrom()
+    {
+        if (! isset($_POST['from'])) {
+            header("HTTP/1.0 400 Bad request. Missing 'from' parameter");
+            return false;
+        }
+        return true;
     }
-    return true;
-}
 
-function validateAssetIssuer()
-{
-    if (! isset($_POST['assetIssuer'])) {
-        header("HTTP/1.0 400 Bad request. Missing 'assetIssuer' parameter");
-        return false;
+    function validateAssetIssuer()
+    {
+        if (! isset($_POST['assetIssuer'])) {
+            header("HTTP/1.0 400 Bad request. Missing 'assetIssuer' parameter");
+            return false;
+        }
+        return true;
     }
-    return true;
-}
 
-function validateAssetCode()
-{
-    if (! isset($_POST['assetCode'])) {
-        header("HTTP/1.0 400 Bad request. Missing 'assetCode' parameter");
-        return false;
+    function validateAssetCode()
+    {
+        if (! isset($_POST['assetCode'])) {
+            header("HTTP/1.0 400 Bad request. Missing 'assetCode' parameter");
+            return false;
+        }
+        return true;
     }
-    return true;
-}
 
-function validateAmount()
-{
-    if (! isset($_POST['amount'])) {
-        header("HTTP/1.0 400 Bad request. Missing 'amount' parameter");
-        return false;
+    function validateAmount()
+    {
+        if (! isset($_POST['amount'])) {
+            header("HTTP/1.0 400 Bad request. Missing 'amount' parameter");
+            return false;
+        }
+        return true;
     }
-    return true;
-}
 
-function validateMemo()
-{
-    if (! isset($_POST['memo'])) {
-        header("HTTP/1.0 400 Bad request. Missing 'memo' parameter");
-        return false;
+    function validateMemo()
+    {
+        if (! isset($_POST['memo'])) {
+            header("HTTP/1.0 400 Bad request. Missing 'memo' parameter");
+            return false;
+        }
+        return true;
     }
-    return true;
-}
 
-function validateId()
-{
-    if (! isset($_POST['id'])) {
-        header("HTTP/1.0 400 Bad request. Missing 'id' parameter");
-        return false;
+    function validateId()
+    {
+        if (! isset($_POST['id'])) {
+            header("HTTP/1.0 400 Bad request. Missing 'id' parameter");
+            return false;
+        }
+        return true;
     }
-    return true;
-}
 
-function validateAcceptedToS()
-{
-    if (! isset($_POST['acceptedTos'])) {
-        header("HTTP/1.0 400 Bad request. Missing 'acceptedTos' parameter");
-        return false;
+    function validateAcceptedToS()
+    {
+        if (! isset($_POST['acceptedTos'])) {
+            header("HTTP/1.0 400 Bad request. Missing 'acceptedTos' parameter");
+            return false;
+        }
+        return true;
     }
-    return true;
 }

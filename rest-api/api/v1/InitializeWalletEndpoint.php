@@ -8,6 +8,7 @@ class InitializeWalletEndpoint extends RestServiceBaseEndpoint
 {
 
     /**
+     *
      * @ApiDescription(section="Wallet", description="Initialize your wallet")
      * @ApiMethod(type="post")
      * @ApiHeaders(name="v", type="string", nullable=false, description="Vendor domain name")
@@ -86,7 +87,9 @@ class InitializeWalletEndpoint extends RestServiceBaseEndpoint
 
     function validatePostParameters()
     {
-        return (validateName() && validateSurname() && validateAddress() && validateCity() && validatePostalcoded() && validateCountry());
+        $validator = new ValidationFunctions();
+        $userValidator = new UserValidationFunctions();
+        return ($userValidator->validateName() && $userValidator->validateSurname() && $validator->validateAddress() && $validator->validateCity() && $validator->validatePostalcoded() && $validator->validateCountry());
     }
 }
 

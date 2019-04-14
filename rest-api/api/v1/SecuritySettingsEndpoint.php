@@ -95,7 +95,8 @@ class SecuritySettingsEndpoint extends RestServiceBaseEndpoint
 
     function validatePostParameters()
     {
-        return validateCurrentPassword();
+        $validator = new UserValidationFunctions();
+        return $validator->validateCurrentPassword();
     }
 }
 

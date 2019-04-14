@@ -41,7 +41,9 @@ class ReceivePaymentEndpoint extends RestServiceBaseEndpoint
      */
     function validatePostParameters()
     {
-        return (validateId() && validateMemo() && validateAmount() && validateAssetCode() && validateAssetIssuer() && validateFrom());
+        $validator = new ValidationFunctions();
+        return ($validator->validateId() && $validator->validateMemo() && $validator->validateAmount() 
+            && $validator->validateAssetCode() && $validator->validateAssetIssuer() && $validator->validateFrom());
     }
 }
 
