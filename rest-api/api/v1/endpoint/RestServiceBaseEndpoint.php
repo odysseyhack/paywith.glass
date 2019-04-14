@@ -1,10 +1,10 @@
 <?php
-
+require_once 'BaseEndpointInterface.php';
 /**
  *   Base class to provide some base support for building REST endpoints.
  *   In order to use this create a class that extendsd from this base class and override the 'handleGetRequest', 'handlePostRequest', 'handlePutRequest' met'hods.
  */
-class RestServiceBaseEndpoint
+class RestServiceBaseEndpoint implements BaseEndpointInterface
 {
 
     var $v;
