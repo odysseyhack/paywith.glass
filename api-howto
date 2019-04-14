@@ -10,7 +10,7 @@ URLS
 To map a URL to a php endpoint we use the .htaccess file in /api/v1
 Add an entry there if you build a new endpoint.
 
-API documnetation
+API documentation
 To add an api to the documnetation document your endpoint class with the correct annotations. 
 Then open the file apidoc.php and do following steps:
 1. require_once 'path-to-your-file/file.php'
