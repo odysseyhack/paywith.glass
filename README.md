@@ -1,4 +1,4 @@
-# paywith.glass - Payments Infrastructure as a Service
+# paywith.glass - Transaction Infrastructure as a Service
 
 Odyssey 2019 - Inclusive Banking
 
